@@ -10,12 +10,12 @@
         <title>Happy Map</title>
 
         <!-- Bootstrap CSS -->
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
         <!-- Our CSS -->
-        <!-- <link rel="stylesheet" type="text/css" href="static/css/style.css"> -->
-        <!-- <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css"> -->
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css"> 
+        <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
 
         <script src='https://cdn.plot.ly/plotly-2.4.2.min.js'></script>
 
@@ -23,30 +23,139 @@
 
     <body>
 
-        
-        
-            <!-- Title -->
-        <div class="container title">
-            <div class="row">
-              <div class="col-md-12 jumbotron text-center">
-                <h1>Happiness Analysis</h1>
-                <p>Use the drop down button below to view charts by year.</p>
+        <!-- Create NavBar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">Happiness</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/pred">Prediction</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Datasets Coming Soon...
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">2015-2018 Coming Soon...</a></li>
+                      <li><a class="dropdown-item" href="#">2019 Coming Soon...</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Coming Soon...</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Coming Soon...</button>
+                </form>
               </div>
             </div>
-        </div>
+          </nav>
+    <!-- End NavBar -->
+        
+            <!-- Title -->
+            <div class="container title">
+                <div class="row">
+                  <div class="col-md-12 jumbotron text-center">
+                    <h1 class="ml2">Happiness Analysis</h1>
+                    <p>Use the drop down button below to view charts by year.</p>
+                  </div>
+                </div>
+            </div>
             <!-- END - Title -->
 
+             <!-- Create Containers -->
+
+    <div class="row">
+        <div class="col-md-5">
+            <p>Choose a country from the dropdown menu to discover it's current happiness score as well as demographic information that contributes to that score.</p>
+            <p>Happy searching!</p>
+        </div>
+        <div class="col-md-2">    
+            <div class="well">
+                <h3>Country:</h3>
+                <select id="selDataset" onchange="optionChanged(this.value)"></select>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                <h5 class="panel-title">Demographic Info</h5>
+                </div>
+            <div id="sample-metadata" class="panel-body"></div>
+          </div>
+        </div>
+        <div class="col-md-5">
+            <script>
+                window.onload = function () {
+                
+                var chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: true,  
+                    title:{
+                        text: "Happiness Scores by Year"
+                    },
+                    axisY: {
+                        title: "Happiness Score",
+                        valueFormatString: "#0,,.",
+                        suffix: "mn",
+                        stripLines: [{
+                            value: 3366500,
+                            label: "Average"
+                        }]
+                    },
+                    data: [{
+                        yValueFormatString: "####",
+                        xValueFormatString: "YYYY",
+                        type: "spline",
+                        // dataPoints: [
+                        //     {x: new Date(2002, 0), y: 2506000},
+                        //     {x: new Date(2003, 0), y: 2798000},
+                        //     {x: new Date(2004, 0), y: 3386000},
+                        //     {x: new Date(2005, 0), y: 6944000},
+                        //     {x: new Date(2006, 0), y: 6026000},
+                        //     {x: new Date(2007, 0), y: 2394000},
+                        //     {x: new Date(2008, 0), y: 1872000},
+                        //     {x: new Date(2009, 0), y: 2140000},
+                        //     {x: new Date(2010, 0), y: 7289000},
+                        //     {x: new Date(2011, 0), y: 4830000},
+                        //     {x: new Date(2012, 0), y: 2009000},
+                        //     {x: new Date(2013, 0), y: 2840000},
+                        //     {x: new Date(2014, 0), y: 2396000},
+                        //     {x: new Date(2015, 0), y: 1613000},
+                        //     {x: new Date(2016, 0), y: 2821000},
+                        //     {x: new Date(2017, 0), y: 2000000}
+                        // ]
+                    }]
+                });
+                chart.render();
+                
+                }
+                </script>
+                </head>
+                <body>
+                <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+          <div id="line"></div>
+        </div>
+      </div>      
+    </div>
+    <!-- END - Container -->
 
         <!-- Optional JavaScript; choose one of the two! -->
         <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
         <!-- Bootstrap -->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
-            crossorigin="anonymous"></script> -->
+            crossorigin="anonymous"></script>
 
         <!-- tobiasahlin.com moving letters-->
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
         <!-- D3 JavaScript -->
         <script src="https://d3js.org/d3.v7.min.js"></script>
