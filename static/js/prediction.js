@@ -22,8 +22,51 @@ anime.timeline({loop: true})
   });
 
   //////// END - Title Animation //////////////
-  
+
+
+//////// Checking Data //////////////
+    d3.json('/data_pred').then(function (predData) {
+
+        console.log("*********", predData.pred[0].actual)
+        // console.log("****TEST*****", predData.country_predict[1].linear_predicted) 
+    
+       });
+//////// END - Checking Data //////////////
+
+
+//////// Chart Test //////////////
 
 d3.json('/data_pred').then(function (predData) {
-    console.log(predData)
-});
+
+
+     var ss = [];
+     var happy_ = [];
+
+     for (var key1 in predData.pred) {
+         ss.push(predData.pred[key1].linear_predicted);
+         happy_.push(predData.pred[key1].actual);
+         };
+
+      var traceBubble = {
+         x: happy_,
+         y: ss,
+         mode: 'markers',
+        type: 'scatter'
+     };
+     
+     var traceDataBub = [traceBubble];
+     
+     var bubbleLayout ={
+         // title: 'Happiness Score vs Suicide Rates by Country',
+         xaxis: {
+             title: 'Actual'},
+         yaxis: {
+             title: 'Linear Pred'}
+     };
+
+     
+     Plotly.newPlot('bubble', traceDataBub, bubbleLayout, {responsive: true});
+
+   });
+
+//////// END - Chart Test //////////////
