@@ -1,9 +1,19 @@
 from flask import Flask, render_template, jsonify
 from flask_pymongo import PyMongo
+from os.path import join, dirname
+import os
+import dotenv
+import certifi
+
+dotenv_path = join(dirname(__file__), ".env")
+dotenv.load_dotenv(dotenv_path)
+
+dataBase=os.environ.get("DATABASE")
 
 app = Flask(__name__)
 
-mongo = PyMongo(app, uri="mongodb://localhost:27017/happy_db")
+app.config["MONGO_URI"] = dataBase
+mongo = PyMongo(app, tlsCAFile=certifi.where())
 
 @app.route('/')
 def db_ping():
