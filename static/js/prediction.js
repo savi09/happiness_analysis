@@ -130,6 +130,7 @@ function optionChanged(selected_id) {
         lasso.push(pred_filt[key1].Lasso_Prediction);
              };
 
+
       document.getElementById("country").innerHTML = selected_id;
       document.getElementById("actual").innerHTML = actual;
       document.getElementById("linear").innerHTML = linear;
