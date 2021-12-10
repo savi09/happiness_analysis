@@ -118,34 +118,36 @@ function optionChanged(selected_id) {
         t_happiness.push(trend_filt[key1].Happiness_Score);
          };
 
-      // var actual = [];
-      // var linear = [];
-      // var svr = [];
-      // var lasso = [];
+      var actual = [];
+      var linear = [];
+      var svr = [];
+      var lasso = [];
 
-      // for (var key1 in pred_filt) {
-      //   actual.push(pred_filt[key1].Actual_Score);
-      //   linear.push(trend_filt[key1].Linear_Reg_Prediction);
-      //   svr.push(pred_filt[key1].SVR_Prediction);
-      //   lasso.push(trend_filt[key1].Lasso_Prediction);
-      //        };
+      for (var key1 in pred_filt) {
+        actual.push(pred_filt[key1].Actual_Score);
+        linear.push(pred_filt[key1].Linear_Reg_Prediction);
+        svr.push(pred_filt[key1].SVR_Prediction);
+        lasso.push(pred_filt[key1].Lasso_Prediction);
+             };
 
-      // console.log(t_year, t_happiness, actual, linear, svr, lasso)
+      console.log(t_year, t_happiness, actual, linear, svr, lasso)
       var trace1 = {
-         x: t_year,
+         x: [2015, 2016, 2017, 2018, 2019],
          y: t_happiness,
+         name: 'Actual',
          mode: 'lines+markers',
         type: 'scatter'
      };
      
-     var traceData1 = [trace1];
+    //  var traceData1 = [trace1];
 
-  //    var trace2 = {
-  //     x: 'Predicted',
-  //     y: linear,
-  //     mode: 'markers',
-  //    type: 'scatter'
-  // };
+     var trace2 = {
+      x: [2019],
+      y: linear,
+      name: 'Prediction',
+      mode: 'markers',
+     type: 'scatter'
+      };
   
   // var traceData2 = [trace2];
      
@@ -157,9 +159,9 @@ function optionChanged(selected_id) {
              title: 'Happiness Score'}
      };
 
-    //  var all_trace = [traceData1, traceData2]
+     var all_trace = [trace1, trace2]
      
-     Plotly.newPlot('bubble', traceData1, bubbleLayout, {responsive: true});
+     Plotly.newPlot('bubble', all_trace, bubbleLayout, {responsive: true});
 
   });
 
