@@ -64,7 +64,8 @@
                 <div class="row">
                   <div class="col-md-12 jumbotron text-center">
                     <h1 class="ml2">Happiness Analysis</h1>
-                    <p>Use the drop down button below to view charts by year.</p>
+                    <p>Choose a country from the dropdown menu to discover it's past, current, and predicted happiness score.</p>
+                    <p>Happy searching!</p>
                   </div>
                 </div>
             </div>
@@ -72,13 +73,21 @@
 
              <!-- Create Containers -->
 
+        <div class="row">
+            <div class="col-md-2">    
+              <div class="well">
+                  <h3>Country:</h3>
+                  <select id="selDataset" onchange="optionChanged(this.value)"></select>
+              </div>
+            </div>
+          </div>
+
     <div class="row">
         <div class="col-md-5">
-            <p>Choose a country from the dropdown menu to discover it's past, current, and predicted happiness score.</p>
-            <p>Happy searching!</p>
-
+            
             <div class="panel panel-primary">
               <div class="panel-heading">
+                <p>  </p>
               <h5 class="panel-title">Happiness Info</h5>
               <p>The happiness score for <b><span id="country"></span></b> in 2019 was <b><span id="actual"></span></b>. Using the SVR (Support Vector Regression) machine learning model we predicted a happiness score of <b><span id="svr"></span></b>. Next, we tested the Lasso machine learning model and received a prediction score of <b><span id="lasso"></span></b>. Lastly, we used the Linear Regression model and received a prediction of <b><span id="linear"></span></b>. Although the models performed about the same, the linear regression model performed the best.</p>
 
@@ -88,13 +97,7 @@
         </div>
   
         </div>
-        <div class="col-md-2">    
-            <div class="well">
-                <h3>Country:</h3>
-                <select id="selDataset" onchange="optionChanged(this.value)"></select>
-            </div>
-            
-        </div>
+        
         <div class="col-md-5">
 
             <!-- Trend Chart -->
