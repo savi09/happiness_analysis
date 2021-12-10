@@ -130,6 +130,12 @@ function optionChanged(selected_id) {
         lasso.push(pred_filt[key1].Lasso_Prediction);
              };
 
+      document.getElementById("country").innerHTML = selected_id;
+      document.getElementById("actual").innerHTML = actual;
+      document.getElementById("linear").innerHTML = linear;
+      document.getElementById("svr").innerHTML = svr;
+      document.getElementById("lasso").innerHTML = lasso;
+
       console.log(t_year, t_happiness, actual, linear, svr, lasso)
       var trace1 = {
          x: [2015, 2016, 2017, 2018, 2019],
@@ -145,7 +151,10 @@ function optionChanged(selected_id) {
       x: [2019],
       y: linear,
       name: 'Prediction',
-      mode: 'markers',
+      marker: { 
+        color: 'rgb(139,0,0)',
+        size: 12 },
+    mode: 'markers',
      type: 'scatter'
       };
   
