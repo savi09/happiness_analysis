@@ -148,21 +148,21 @@ Display the happiness scores by country for the actual score as well as the scor
 Figure: 
 
 ### Sources
-Power point images: All images in out presentation came from the Powerpoint Design Tool or Online Pictures Tool. Except, the ones we created.
-Git hub markdown cheatsheet: Markdown Cheatsheet
-Convert country name to country code for use in Plotly: pypi.org
-Colorscales for plotly: Plotly Colorscales
-Choropleth map: Plotly Chloropleth
-JavaScript Library with moving letters to animate headers: Animation
-Plotly: Plotly
-D3: D3
-Aggregation: Plotly-Aggregations
-Bar chart: Plotly-Bar Charts
-Bubble chart: Plotly-Bubble Charts
-Scatter plot: Plotly-Scatter Charts
-Bootstrap: Bootstrap Docs
-Bootswatch: Bootswatch-Minty
-Heroku: https://www.heroku.com/
-mongoDB Atlas: https://www.mongodb.com/atlas/database?_ga=2.176877991.361175793.1639103771-1437929995.1639103766&_gac=1.83676900.1639103771.CjwKCAiA78aNBhAlEiwA7B76p6V6ffHMLN9j76_hEwiwkU-YBAxxbW2vbm5DWi4DvsdzPuDM4AdLThoCSqgQAvD_BwE
-TensorFlow: https://www.tensorflow.org/
-SKLearn: https://scikit-learn.org/stable/index.html
+* Power point images: All images in out presentation came from the Powerpoint Design Tool or Online Pictures Tool. Except, the ones we created.
+* Git hub markdown cheatsheet: Markdown Cheatsheet
+* Convert country name to country code for use in Plotly: pypi.org
+* Colorscales for plotly: Plotly Colorscales
+* Choropleth map: Plotly Chloropleth
+* JavaScript Library with moving letters to animate headers: Animation
+* Plotly: Plotly
+* D3: D3
+* Aggregation: Plotly-Aggregations
+* Bar chart: Plotly-Bar Charts
+* Bubble chart: Plotly-Bubble Charts
+* Scatter plot: Plotly-Scatter Charts
+* Bootstrap: Bootstrap Docs
+* Bootswatch: Bootswatch-Minty
+* Heroku: https://www.heroku.com/
+* mongoDB Atlas: https://www.mongodb.com/atlas/database?_ga=2.176877991.361175793.1639103771-1437929995.1639103766&_gac=1.83676900.1639103771.CjwKCAiA78aNBhAlEiwA7B76p6V6ffHMLN9j76_hEwiwkU-YBAxxbW2vbm5DWi4DvsdzPuDM4AdLThoCSqgQAvD_BwE
+* TensorFlow: https://www.tensorflow.org/
+* SKLearn: https://scikit-learn.org/stable/index.html
