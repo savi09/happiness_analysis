@@ -70,85 +70,46 @@
             </div>
             <!-- END - Title -->
 
-            <!-- Bubble Chart -->
-            <div class="card border-info mb-3" style="width: 877px;" style="max-height: 600px;">
-                <div class="card-body">
-                <h4 class="card-title">Happiness Score vs Suicide Rates by Country</h4>
-                    <div class="col bubble">
-                        <div id="bubble"><svg xmlns="bubble" class="d-block user-select-none" width="100%" height="100%" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
-                <!-- <rect width="100%" height="100%" fill="#6CC3D5"></rect> -->
-                        </svg>
-                        </div>
-                    </div>
-                </div>  
-            </div> 
-             <!-- End Bubble Chart -->
-
              <!-- Create Containers -->
 
     <div class="row">
         <div class="col-md-5">
-            <p>Choose a country from the dropdown menu to discover it's current happiness score as well as demographic information that contributes to that score.</p>
+            <p>Choose a country from the dropdown menu to discover it's past, current, and predicted happiness score.</p>
             <p>Happy searching!</p>
+
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+              <h5 class="panel-title">Happiness Info</h5>
+              <p>hdfbdnbkn {ctry_nm}</p>
+
+
+              </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+  
         </div>
         <div class="col-md-2">    
             <div class="well">
                 <h3>Country:</h3>
                 <select id="selDataset" onchange="optionChanged(this.value)"></select>
             </div>
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                <h5 class="panel-title">Demographic Info</h5>
-                </div>
-            <div id="sample-metadata" class="panel-body"></div>
-          </div>
+            
         </div>
         <div class="col-md-5">
-            <script>
-                window.onload = function () {
-                
-                var chart = new CanvasJS.Chart("chartContainer", {
-                    animationEnabled: true,  
-                    title:{
-                        text: "Happiness Scores by Year"
-                    },
-                    axisY: {
-                        title: "Happiness Score",
-                        valueFormatString: "#0,,.",
-                        suffix: "mn",
-                        stripLines: [{
-                            value: 3366500,
-                            label: "Average"
-                        }]
-                    },
-                    data: [{
-                        yValueFormatString: "####",
-                        xValueFormatString: "YYYY",
-                        type: "spline",
-                        // dataPoints: [
-                        //     {x: new Date(2002, 0), y: 2506000},
-                        //     {x: new Date(2003, 0), y: 2798000},
-                        //     {x: new Date(2004, 0), y: 3386000},
-                        //     {x: new Date(2005, 0), y: 6944000},
-                        //     {x: new Date(2006, 0), y: 6026000},
-                        //     {x: new Date(2007, 0), y: 2394000},
-                        //     {x: new Date(2008, 0), y: 1872000},
-                        //     {x: new Date(2009, 0), y: 2140000},
-                        //     {x: new Date(2010, 0), y: 7289000},
-                        //     {x: new Date(2011, 0), y: 4830000},
-                        //     {x: new Date(2012, 0), y: 2009000},
-                        //     {x: new Date(2013, 0), y: 2840000},
-                        //     {x: new Date(2014, 0), y: 2396000},
-                        //     {x: new Date(2015, 0), y: 1613000},
-                        //     {x: new Date(2016, 0), y: 2821000},
-                        //     {x: new Date(2017, 0), y: 2000000}
-                        // ]
-                    }]
-                });
-                chart.render();
-                
-                }
-                </script>
+
+            <!-- Trend Chart -->
+            <div class="card border-info mb-3" style="width: 877px;" style="max-height: 600px;">
+              <div class="card-body">
+              <h4 class="card-title">Happiness Score vs Suicide Rates by Country</h4>
+                  <div class="col bubble">
+                      <div id="bubble"><svg xmlns="bubble" class="d-block user-select-none" width="100%" height="100%" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+                      </svg>
+                      </div>
+                  </div>
+              </div>  
+          </div> 
+           <!-- End Trend Chart -->
+
                 </head>
                 <body>
                 <div id="chartContainer" style="height: 370px; width: 100%;"></div>

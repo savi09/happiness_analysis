@@ -38,7 +38,8 @@ def h_ping():
 def db_data2():
 
     pred_data = mongo.db.country_predict.find({}, {'_id': False, 'standard_error': False})
-    data_2 = {'pred': [x for x in pred_data]}
+    trend_data = mongo.db.ctry_trend.find({}, {'_id': False, 'standard_error': False})
+    data_2 = {'pred': [x for x in pred_data], 'trend': [x for x in trend_data]}
     return jsonify(data_2)
 
 if __name__ == '__main__':

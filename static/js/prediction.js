@@ -24,49 +24,146 @@ anime.timeline({loop: true})
   //////// END - Title Animation //////////////
 
 
-//////// Checking Data //////////////
-    d3.json('/data_pred').then(function (predData) {
+// //////// Checking Data //////////////
+//     d3.json('/data_pred').then(function (predData) {
 
-        console.log("*********", predData.pred[0].actual)
-        // console.log("****TEST*****", predData.country_predict[1].linear_predicted) 
+//         console.log("*********", predData.pred[0].Country)
+//         // console.log("****TEST*****", predData.country_predict[1].linear_predicted) 
     
-       });
-//////// END - Checking Data //////////////
+//        });
+// //////// END - Checking Data //////////////
 
 
-//////// Chart Test //////////////
+// //////// Chart Test //////////////
 
-d3.json('/data_pred').then(function (predData) {
+// d3.json('/data_pred').then(function (predData) {
 
 
-     var ss = [];
-     var happy_ = [];
+//      var ss = [];
+//      var happy_ = [];
+
+//      for (var key1 in predData.pred) {
+//          ss.push(predData.pred[key1].linear_predicted);
+//          happy_.push(predData.pred[key1].actual);
+//          };
+
+//       var traceBubble = {
+//          x: happy_,
+//          y: ss,
+//          mode: 'markers',
+//         type: 'scatter'
+//      };
+     
+//      var traceDataBub = [traceBubble];
+     
+//      var bubbleLayout ={
+//          // title: 'Happiness Score vs Suicide Rates by Country',
+//          xaxis: {
+//              title: 'Actual'},
+//          yaxis: {
+//              title: 'Linear Pred'}
+//      };
+
+     
+//      Plotly.newPlot('bubble', traceDataBub, bubbleLayout, {responsive: true});
+
+//    });
+
+// //////// END - Chart Test //////////////
+
+
+
+var dropdownMenu = d3.select("#selDataset");
+
+// Give button access to the id's. 
+function init() { 
+  d3.json('/data_pred').then(function (predData) {
+
+  //////// Country Drop down //////////////
+
+    var ctry_nm = [];
 
      for (var key1 in predData.pred) {
-         ss.push(predData.pred[key1].linear_predicted);
-         happy_.push(predData.pred[key1].actual);
+         ctry_nm.push(predData.pred[key1].Country);
          };
 
-      var traceBubble = {
-         x: happy_,
-         y: ss,
-         mode: 'markers',
+      // console.log("ctry_nm");
+      console.log(ctry_nm);
+
+      ctry_nm.map((x) => { //defines the drop down menu
+        dropdownMenu
+          .append("option")
+          .property("value", x)
+          .text(x);
+      });
+      optionChanged(ctry_nm[0])
+
+  //////// END - Country Drop down //////////////
+  });
+};
+
+function optionChanged(selected_id) { 
+  console.log("test", selected_id)
+
+  d3.json('/data_pred').then(function (predData) {
+    
+    var pred_filt = predData.pred.filter(x => x.Country == selected_id);
+    var trend_filt = predData.trend.filter(x => x.Country == selected_id);
+
+    var t_year = [];
+    var t_happiness = [];
+
+     for (var key1 in trend_filt) {
+        t_year.push(trend_filt[key1].year);
+        t_happiness.push(trend_filt[key1].Happiness_Score);
+         };
+
+      // var actual = [];
+      // var linear = [];
+      // var svr = [];
+      // var lasso = [];
+
+      // for (var key1 in pred_filt) {
+      //   actual.push(pred_filt[key1].Actual_Score);
+      //   linear.push(trend_filt[key1].Linear_Reg_Prediction);
+      //   svr.push(pred_filt[key1].SVR_Prediction);
+      //   lasso.push(trend_filt[key1].Lasso_Prediction);
+      //        };
+
+      // console.log(t_year, t_happiness, actual, linear, svr, lasso)
+      var trace1 = {
+         x: t_year,
+         y: t_happiness,
+         mode: 'lines+markers',
         type: 'scatter'
      };
      
-     var traceDataBub = [traceBubble];
+     var traceData1 = [trace1];
+
+  //    var trace2 = {
+  //     x: 'Predicted',
+  //     y: linear,
+  //     mode: 'markers',
+  //    type: 'scatter'
+  // };
+  
+  // var traceData2 = [trace2];
      
      var bubbleLayout ={
          // title: 'Happiness Score vs Suicide Rates by Country',
          xaxis: {
-             title: 'Actual'},
+             title: 'Year'},
          yaxis: {
-             title: 'Linear Pred'}
+             title: 'Happiness Score'}
      };
 
+    //  var all_trace = [traceData1, traceData2]
      
-     Plotly.newPlot('bubble', traceDataBub, bubbleLayout, {responsive: true});
+     Plotly.newPlot('bubble', traceData1, bubbleLayout, {responsive: true});
 
-   });
+  });
 
-//////// END - Chart Test //////////////
+};
+
+
+init();
