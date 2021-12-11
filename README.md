@@ -8,6 +8,9 @@
 * Lori Pepper
 
 ### Presentation
+
+#### [Happiness Analysis](https://happiness-analysis.herokuapp.com/)
+
 To view the presentation, click below (This will require you to download the file, but it will have audio):
 
 Project 4- Happiness by Country.mp4
@@ -178,8 +181,6 @@ Display the happiness scores by country for the actual score as well as the scor
 * mongoDB Atlas: [MongoDB Atlas](https://www.mongodb.com/atlas/database?_ga=2.176877991.361175793.1639103771-1437929995.1639103766&_gac=1.83676900.1639103771.CjwKCAiA78aNBhAlEiwA7B76p6V6ffHMLN9j76_hEwiwkU-YBAxxbW2vbm5DWi4DvsdzPuDM4AdLThoCSqgQAvD_BwE)
 * TensorFlow: [TensorFlow](https://www.tensorflow.org/)
 * SKLearn: [Machine Learning with SKLearn](https://scikit-learn.org/stable/index.html)
-* Heroku: [deployement](https://happiness-analysis.herokuapp.com/)
 
 ### Additional Wishlist:
 - Search Field Operable
-- 
