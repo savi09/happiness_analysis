@@ -72,9 +72,9 @@ We were curious to see:
 ## Step 5: Machine Learning Integration ********NEW********
 - Data was cleaned further for machine learning modeling.
 - Models were run on two different method:
-- Method 1:
+### Method 1:
 - A dataset combining several years was created, this dataset was transformed using train/test/split/scaled then put through multiple machine learning models to determine scores and put through predictions.
-- Method 2: 
+### Method 2: 
 - A training dataset was created with several years of happiness scores.  The 2019 dataset was used as the testing dataset.  These training sets were scaled then run through the same machine learning models to determine the scores and if they were different than method 1 and predictions were created for 2019.
 
 ## Step 6: HTML, Flask, Javascript, MongoDB Revisions
@@ -178,6 +178,7 @@ Display the happiness scores by country for the actual score as well as the scor
 * mongoDB Atlas: [MongoDB Atlas](https://www.mongodb.com/atlas/database?_ga=2.176877991.361175793.1639103771-1437929995.1639103766&_gac=1.83676900.1639103771.CjwKCAiA78aNBhAlEiwA7B76p6V6ffHMLN9j76_hEwiwkU-YBAxxbW2vbm5DWi4DvsdzPuDM4AdLThoCSqgQAvD_BwE)
 * TensorFlow: [TensorFlow](https://www.tensorflow.org/)
 * SKLearn: [Machine Learning with SKLearn](https://scikit-learn.org/stable/index.html)
+* Heroku: [deployement](https://happiness-analysis.herokuapp.com/)
 
 ### Additional Wishlist:
 - Search Field Operable
