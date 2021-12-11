@@ -107,6 +107,9 @@ We were curious to see:
 ### World Map of Happiness Score
 Plotting the happiness score by rank on a map of countries, you can see minor differences when you toggle between the two years available from the drop down. When you hover over each country you can see the country, happiness score as well as the country code. This data is also what fills in the table that displays the countries in order by rank. Again, there were only minor differences in the rank between the two years analyzed.
 
+###### Figure:  Home Page
+[Happiness Site- Home Page](https://github.com/savi09/happiness_analysis/blob/eba7cb62ab85a22b30fe4d92048834be11c100a0/Images/Happiness%20Home%20Page.png)
+
 ###### Figure: World Map of Happiness Score 2015
 ![World Map of Happiness Score 2015](https://github.com/savi09/Project-3-happiness-by-country/blob/bbc1aaf04cb2be022a543187d1ecb74a7f0e08c9/images/World%20Happiness%20Map-%202015.png)
 
@@ -143,12 +146,17 @@ When comparing 2015 and 2016 in the dashboard, you can see that the countries st
 ### Happiness Scores Trend Line by Country
 Visualize the trend of happiness score by country over the years of 2015 through 2019, including a data point for the predicted happiness score. 
 
+###### Figure:  Predictions Page
+[Happiness Site- Predictions Page](https://github.com/savi09/happiness_analysis/blob/eba7cb62ab85a22b30fe4d92048834be11c100a0/Images/Happiness%20Predictions%20Page.png)
+
 ###### Figure: Happiness Score Trend Line
+[Happiness Score Trendline](https://github.com/savi09/happiness_analysis/blob/eba7cb62ab85a22b30fe4d92048834be11c100a0/Images/Happiness%20Score%20Trendline.png)
 
 ### Happiness Scores from Machine Learning Models
 Display the happiness scores by country for the actual score as well as the scores predicted by various machine learning models.
 
 ###### Figure: Happiness Score by Country with Machine Learning Predictions
+[Happiness Score ML Predictions Compared to Actual](https://github.com/savi09/happiness_analysis/blob/eba7cb62ab85a22b30fe4d92048834be11c100a0/Images/Happiness%20score%20by%20country%20plus%20predictions.png)
 
 ## Sources
 * Power point images: All images in out presentation came from the Powerpoint Design Tool or Online Pictures Tool. Except, the ones we created. 
