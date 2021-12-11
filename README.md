@@ -9,7 +9,7 @@
 
 ### Presentation
 
-#### [Happiness Analysis](https://happiness-analysis.herokuapp.com/)
+#### [Happiness Analysis Website](https://happiness-analysis.herokuapp.com/)
 
 To view the presentation, click below (This will require you to download the file, but it will have audio):
 
@@ -17,7 +17,7 @@ Project 4- Happiness by Country.mp4
 
 To view a .pdf version of the slides, click below:
 
-Project 4- Happiness by Country.pdf
+[Project 4- Happiness by Country.pdf](https://github.com/savi09/happiness_analysis/blob/46cf8746f1d059c52b64f784b33e4016be3d490d/Images/Happiness%20Analysis%20-%20Machine%20Learnig%20Integration.pdf)
 
 ### Project Description
 Extract, transform, and load happiness and suicide data to a database. Use Flask to utilize that database to create a dashboard visualizing certain datapoints.  Use machine learning models to predict a happiness score.  
